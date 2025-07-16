@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Ստանդարտների ցուցակ{% endblock %}
+
+{% block content %}
+    <h1>Ստանդարտների ցուցակ</h1>
+    <ul>
+        {% for standard in standards %}
+            <li>{{ standard.name }} - {{ standard.description }}</li>
+        {% empty %}
+            <li>Ստանդարտներ չկան:</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

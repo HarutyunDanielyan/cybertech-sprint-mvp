@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Մուտք{% endblock %}
+
+{% block content %}
+    <h1>Մուտք</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- Django-ի authentication ձևը -->
+        <button type="submit">Մուտք գործել</button>
+    </form>
+{% endblock %}

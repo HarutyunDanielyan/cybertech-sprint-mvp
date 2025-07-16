@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Հարցաշար{% endblock %}
+
+{% block content %}
+    <h1>Հարցաշար: {{ quiz.title }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% for question in quiz.questions %}
+            <p>{{ question.text }}</p>
+            <!-- Պատասխանների ընտրանքներ -->
+        {% endfor %}
+        <button type="submit">Հաստատել</button>
+    </form>
+{% endblock %}

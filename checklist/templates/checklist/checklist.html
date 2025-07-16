@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Ստուգաթերթ{% endblock %}
+
+{% block content %}
+    <h1>Ստուգաթերթ {{ standard.name }}-ի համար</h1>
+    <ul>
+        {% for task in checklist.tasks %}
+            <li>{{ task }}</li>
+        {% empty %}
+            <li>Առաջադրանքներ չկան:</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
