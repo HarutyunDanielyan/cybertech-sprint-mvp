@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+    <div class="hero-banner">
+        <img src="{% static 'images/hero.jpg' %}" alt="Hero Banner">
+        <h1>{{ slogan }}</h1>
+    </div>
+    <section class="about">
+        <h2>About Us</h2>
+        <p>{{ about }}</p>
+    </section>
+    <section class="actions">
+        <h3>Explore</h3>
+        <ul>
+            <li><a href="{% url 'standards:standard_list' %}">Browse Standards</a></li>
+            <li><a href="{% url 'registration:pricing_plans' %}">Pricing Plans</a></li>
+            <li><a href="{% url 'users:login' %}">Log In</a></li>
+            <li><a href="{% url 'users:register' %}">Register</a></li>
+        </ul>
+    </section>
+{% endblock %}

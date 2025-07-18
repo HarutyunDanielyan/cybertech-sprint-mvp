@@ -1,14 +1,23 @@
 {% extends 'base.html' %}
-
 {% block title %}Ստանդարտների ցուցակ{% endblock %}
-
 {% block content %}
     <h1>Ստանդարտների ցուցակ</h1>
-    <ul>
+    <form method="get">
+        <label>Industry: <input name="industry"></label>
+        <label>Company Size: <input name="company_size"></label>
+        <button type="submit">Filter</button>
+    </form>
+    <div class="standards">
         {% for standard in standards %}
-            <li>{{ standard.name }} - {{ standard.description }}</li>
+            <div class="standard-card">
+                <h2>{{ standard.name }}</h2>
+                <p>{{ standard.description }}</p>
+                <p>Industry: {{ standard.industry }}</p>
+                <p>Size: {{ standard.company_size }}</p>
+                <a href="{% url 'standards:standard_select' standard.id %}">Select</a>
+            </div>
         {% empty %}
-            <li>Ստանդարտներ չկան:</li>
+            <p>Ստանդարտներ չկան:</p>
         {% endfor %}
-    </ul>
+    </div>
 {% endblock %}

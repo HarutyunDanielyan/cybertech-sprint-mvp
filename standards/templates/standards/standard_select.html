@@ -1,16 +1,11 @@
 {% extends 'base.html' %}
-
 {% block title %}Ընտրել ստանդարտ{% endblock %}
-
 {% block content %}
-    <h1>Ընտրել ստանդարտ</h1>
+    <h1>Ընտրել {{ standard.name }}</h1>
+    <p>Հաստատե՞լ ընտրությունը:</p>
     <form method="post">
         {% csrf_token %}
-        <select name="standard_id">
-            {% for standard in standards %}
-                <option value="{{ standard.id }}">{{ standard.name }}</option>
-            {% endfor %}
-        </select>
-        <button type="submit">Ընտրել</button>
+        {{ form.as_p }}
+        <button type="submit">Հաստատել</button>
     </form>
 {% endblock %}

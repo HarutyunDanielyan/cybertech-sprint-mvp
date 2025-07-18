@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
-
 {% block title %}Գրանցվել պլանում{% endblock %}
-
 {% block content %}
     <h1>Գրանցվել {{ plan.name }}-ում</h1>
+    <p>Գին: {{ plan.price }}</p>
+    <p>Հնարավորություններ: {{ plan.features }}</p>
     <form method="post">
         {% csrf_token %}
-        <!-- Լրացուցիչ դաշտեր, եթե անհրաժեշտ է -->
+        {{ form.as_p }}
         <button type="submit">Հաստատել գրանցումը</button>
     </form>
 {% endblock %}

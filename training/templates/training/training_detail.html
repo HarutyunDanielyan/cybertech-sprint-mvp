@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Դասընթաց{% endblock %}
+{% block content %}
+    <h1>{{ module.title }}</h1>
+    <iframe src="{{ module.video_url }}" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    {% if module.quiz %}
+        <h2>Quiz</h2>
+        <ul>
+            {% for question in module.quiz %}
+                <li>{{ question.text }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Mark as Completed</button>
+    </form>
+{% endblock %}

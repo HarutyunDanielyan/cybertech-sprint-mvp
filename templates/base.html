@@ -1,25 +1,42 @@
-<!-- templates/base.html -->
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}CyberTech Sprint MVP{% endblock %}</title>
+    <title>{% block title %}Mediant Compliance App{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
         <nav>
-            <!-- Նավիգացիոն մենյու -->
+            <ul>
+                <li><a href="{% url 'core:landing' %}">Home</a></li>
+                <li><a href="{% url 'standards:standard_list' %}">Standards</a></li>
+                <li><a href="{% url 'assessments:quiz_list' %}">Assessments</a></li>
+                <li><a href="{% url 'training:training_list' %}">Training</a></li>
+                <li><a href="{% url 'dashboard:roadmap' %}">Dashboard</a></li>
+                {% if user.is_authenticated %}
+                    <li>
+                        <form action="{% url 'users:logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                {% else %}
+                    <li><a href="{% url 'users:login' %}">Login</a></li>
+                    <li><a href="{% url 'users:register' %}">Register</a></li>
+                {% endif %}
+            </ul>
         </nav>
     </header>
     <main>
         {% block content %}{% endblock %}
     </main>
     <footer>
-        <!-- Ֆուտեր -->
+        <p>Contact: info@mediant.com | Phone: +123456789</p>
+        <div class="social-links">
+            <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a>
+        </div>
     </footer>
-</body>
-</html>
-

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+    <h1>Admin Dashboard</h1>
+    <section>
+        <h2>Statistics</h2>
+        <p>Total Users: {{ total_users }}</p>
+        <p>Auditors: {{ auditors }}</p>
+        <p>Admins: {{ admins }}</p>
+        <canvas id="complianceChart"></canvas>
+    </section>
+    <section>
+        <h2>Quick Links</h2>
+        <ul>
+            <li><a href="{% url 'standards:standard_list' %}">Manage Standards</a></li>
+            <li><a href="{% url 'registration:pricing_plans' %}">Manage Plans</a></li>
+            <li><a href="{% url 'reports:report_list' %}">View Reports</a></li>
+        </ul>
+    </section>
+    <script>
+        const ctx = document.getElementById('complianceChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [{% for score in scores %}'{{ score.quiz__title }}',{% endfor %}],
+                datasets: [{
+                    label: 'Average Compliance Score',
+                    data: [{% for score in scores %}{{ score.avg_score }},{% endfor %}],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            }
+        });
+    </script>
+{% endblock %}

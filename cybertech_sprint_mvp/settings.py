@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from decouple import config
-
-
 import os
 from dotenv import load_dotenv
 
@@ -53,6 +51,7 @@ INSTALLED_APPS = [
     "training",
     "checklist",
     "core",
+    "reports",
     "rest_framework",
 ]
 
@@ -146,3 +145,6 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = 'users.User'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+LOGIN_REDIRECT_URL = '/dashboard/'

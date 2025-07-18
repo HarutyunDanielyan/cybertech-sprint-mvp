@@ -1,4 +1,7 @@
-# Այս app-ը այս պահին URLs չի պահանջում։ Կարող եք այն դատարկ թողնել:
 from django.urls import path
+from .views import LandingPageView
 
-urlpatterns = []
+app_name = 'core'
+urlpatterns = [
+    path("", LandingPageView.as_view(), name="landing"),
+]

@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
-
 {% block title %}Մուտք{% endblock %}
-
 {% block content %}
     <h1>Մուտք</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}  <!-- Django-ի authentication ձևը -->
+        {{ form.as_p }}
+        <a href="{% url 'users:password_reset' %}">Մոռացե՞լ եք գաղտնաբառը</a>
         <button type="submit">Մուտք գործել</button>
     </form>
 {% endblock %}

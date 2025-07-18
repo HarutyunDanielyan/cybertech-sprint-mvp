@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
-
-{% block title %}Գրանցում{% endblock %}
-
+{% block title %}Register{% endblock %}
 {% block content %}
-    <h1>Գրանցում</h1>
+    <h1>Register</h1>
+    {% if form.errors %}
+        <p style="color: red;">Please correct the following errors:</p>
+        {{ form.errors }}
+    {% endif %}
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Գրանցվել</button>
+        <button type="submit">Register</button>
     </form>
+    <p>Already have an account? <a href="{% url 'users:login' %}">Login</a></p>
 {% endblock %}

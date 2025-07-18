@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}User Dashboard{% endblock %}
+{% block content %}
+    <h1>User Dashboard</h1>
+    <section>
+        <h2>Roadmap Progress</h2>
+        {% for score in scores %}
+            <p>{{ score.quiz.title }}: <progress value="{{ score.score }}" max="100"></progress> {{ score.score }}%</p>
+        {% empty %}
+            <p>No progress yet.</p>
+        {% endfor %}
+    </section>
+    <section>
+        <h2>Next 5 Checklist Tasks</h2>
+        <ul>
+            {% for checklist in tasks %}
+                {% for task in checklist.tasks %}
+                    <li>{{ task }}</li>
+                {% endfor %}
+            {% empty %}
+                <li>No tasks available.</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Quick Links</h2>
+        <ul>
+            <li><a href="{% url 'training:training_list' %}">Training Modules</a></li>
+            <li><a href="{% url 'reports:report_list' %}">Reports</a></li>
+        </ul>
+    </section>
+{% endblock %}

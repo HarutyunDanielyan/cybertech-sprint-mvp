@@ -1,15 +1,12 @@
 {% extends 'base.html' %}
-
-{% block title %}Հարցաշար{% endblock %}
-
+{% block title %}Take Quiz: {{ form.quiz.title }}{% endblock %}
 {% block content %}
-    <h1>Հարցաշար: {{ quiz.title }}</h1>
+    <h1>{{ form.quiz.title }}</h1>
+    <p><strong>Description:</strong> {{ form.quiz.description }}</p>
     <form method="post">
         {% csrf_token %}
-        {% for question in quiz.questions %}
-            <p>{{ question.text }}</p>
-            <!-- Պատասխանների ընտրանքներ -->
-        {% endfor %}
-        <button type="submit">Հաստատել</button>
+        {{ form.as_p }}
+        <button type="submit">Submit Quiz</button>
     </form>
+    <a href="{% url 'assessments:quiz_list' %}">Back to Quiz List</a>
 {% endblock %}

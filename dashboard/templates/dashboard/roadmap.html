@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
-
 {% block title %}Հաշվետվություն{% endblock %}
-
 {% block content %}
     <h1>Բարի գալուստ Dashboard</h1>
     <p>Սա Ձեր roadmap էջն է։</p>
@@ -34,6 +32,4 @@
             {% endfor %}
         </ul>
     </div>
-
-    <p><a href="{% url 'users:logout' %}">Դուրս գալ</a></p>
 {% endblock %}

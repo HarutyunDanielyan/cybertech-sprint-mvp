@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Auditor Dashboard{% endblock %}
+{% block content %}
+    <h1>Auditor Dashboard</h1>
+    <section>
+        <h2>Companies Under Audit</h2>
+        <table>
+            <tr><th>Company</th><th>Status</th><th>Due Date</th></tr>
+            {% for reg in companies %}
+                <tr><td>{{ reg.user.username }}</td><td>Active</td><td>{{ reg.registered_at|add:"30 days" }}</td></tr>
+            {% empty %}
+                <tr><td colspan="3">No companies assigned.</td></tr>
+            {% endfor %}
+        </table>
+    </section>
+    <section>
+        <h2>Weekly Progress</h2>
+        <form method="post">
+            {% csrf_token %}
+            <textarea name="progress" rows="4" cols="50"></textarea>
+            <button type="submit">Submit Progress</button>
+        </form>
+    </section>
+    {% if overdue_tasks %}
+        <section>
+            <h2>Risk Alerts</h2>
+            <p>{{ overdue_tasks }} overdue tasks detected.</p>
+        </section>
+    {% endif %}
+{% endblock %}

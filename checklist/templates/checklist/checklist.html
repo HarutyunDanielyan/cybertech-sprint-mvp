@@ -1,14 +1,22 @@
 {% extends 'base.html' %}
-
 {% block title %}Ստուգաթերթ{% endblock %}
-
 {% block content %}
-    <h1>Ստուգաթերթ {{ standard.name }}-ի համար</h1>
-    <ul>
-        {% for task in checklist.tasks %}
-            <li>{{ task }}</li>
-        {% empty %}
-            <li>Առաջադրանքներ չկան:</li>
-        {% endfor %}
-    </ul>
+    <h1>Ստուգաթերթեր</h1>
+    {% for checklist in checklists %}
+        <h2>{{ checklist.standard.name }}</h2>
+        <form method="post">
+            {% csrf_token %}
+            <ul>
+                {% for task in checklist.tasks %}
+                    <li>
+                        <input type="checkbox" name="task_{{ forloop.counter0 }}" {% if task.completed %}checked{% endif %}>
+                        {{ task.text }}
+                    </li>
+                {% endfor %}
+            </ul>
+            <button type="submit">Save</button>
+        </form>
+    {% empty %}
+        <p>Ստուգաթերթեր չկան:</p>
+    {% endfor %}
 {% endblock %}
