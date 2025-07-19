@@ -1,0 +1,66 @@
+/* src/components/Quiz.css */
+.quiz-container {
+    background: white;
+    width: 100%;
+    max-width: 600px;
+    margin: 4rem auto;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.question-section {
+    margin-bottom: 20px;
+}
+
+.question-count {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.question-text {
+    font-size: 22px;
+}
+
+.answer-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.answer-section button {
+    width: 100%;
+    font-size: 16px;
+    color: #333;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.answer-section button:hover {
+    background-color: #dbeafe;
+    color: #0056b3;
+}
+
+/* Стили для результата */
+.score-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+.result-text {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.result-percentage {
+    font-size: 1.2rem;
+    color: #555;
+}

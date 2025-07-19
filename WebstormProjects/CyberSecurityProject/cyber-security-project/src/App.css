@@ -1,0 +1,38 @@
+/* Стилизация узлов в React Flow */
+.react-flow__node {
+  background-color: #ffffff;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.react-flow__node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Стилизация корневого узла (с типом 'input') */
+.react-flow__node-input {
+  background-color: #007bff;
+  border-color: #0056b3;
+  color: white;
+}
+
+/* Стилизация конечных узлов (с типом 'output') */
+.react-flow__node-output {
+  background-color: #28a745;
+  border-color: #1e7e34;
+  color: white;
+}
+
+/* Стилизация линий-связей */
+.react-flow__edge-path {
+  stroke: #007bff;
+  stroke-width: 2;
+}
