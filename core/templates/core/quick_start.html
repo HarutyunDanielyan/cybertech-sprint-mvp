@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+{% block title %}{% trans "Quick Start" %}{% endblock %}
+{% block content %}
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6 lang-en">{% trans "Quick Start with Moderat" %}</h2>
+        <h2 class="text-3xl font-bold mb-6 lang-hy">{% trans "Արագ մեկնարկ Moderat-ով" %}</h2>
+        <p class="text-lg mb-8 lang-en">{{ slogan }}</p>
+        <p class="text-lg mb-8 lang-hy">{{ about }}</p>
+        <a href="{% url 'registration:pricing_plans' %}" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 lang-en">{% trans "Start Free Trial" %}</a>
+        <a href="{% url 'registration:pricing_plans' %}" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 lang-hy">{% trans "Սկսել անվճար փորձաշրջան" %}</a>
+    </div>
+</section>
+{% endblock %}

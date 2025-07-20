@@ -1,7 +1,10 @@
 from django.urls import path
-from .views import LandingPageView
+from . import views
 
 app_name = 'core'
+
 urlpatterns = [
-    path("", LandingPageView.as_view(), name="landing"),
+    path('', views.landing, name='landing'),
+    path('quick-start/', views.quick_start, name='quick_start'),
+    path('frameworks/', views.frameworks, name='frameworks'),
 ]

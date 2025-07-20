@@ -1,32 +1,124 @@
 {% extends 'base.html' %}
-{% block title %}User Dashboard{% endblock %}
+{% load static i18n custom_filters %}
+{% block title %}{% trans "User Dashboard" %}{% endblock %}
 {% block content %}
-    <h1>User Dashboard</h1>
-    <section>
-        <h2>Roadmap Progress</h2>
-        {% for score in scores %}
-            <p>{{ score.quiz.title }}: <progress value="{{ score.score }}" max="100"></progress> {{ score.score }}%</p>
-        {% empty %}
-            <p>No progress yet.</p>
-        {% endfor %}
-    </section>
-    <section>
-        <h2>Next 5 Checklist Tasks</h2>
-        <ul>
-            {% for checklist in tasks %}
-                {% for task in checklist.tasks %}
-                    <li>{{ task }}</li>
-                {% endfor %}
+<div id="user-dashboard" class="pt-16 min-h-screen">
+    <div class="bg-white shadow-sm p-6 mb-6">
+        <h1 class="text-2xl font-bold lang-en">{% trans "Compliance Dashboard" %}</h1>
+        <h1 class="text-2xl font-bold lang-hy">{% trans "Համապատասխանության Dashboard" %}</h1>
+        <p class="text-gray-600 lang-en">{% trans "Welcome" %}, {{ user.email }}! {% trans "Last login" %}: {{ user.last_login|date:"Y-m-d H:i" }}</p>
+        <p class="text-gray-600 lang-hy">{% trans "Բարի գալուստ" %}, {{ user.email }}! {% trans "Վերջին մուտքը" %}: {{ user.last_login|date:"Y-m-d H:i" }}</p>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+        <div class="bg-white p-4 rounded-lg shadow">
+            <p class="text-sm text-gray-600 lang-en">{% trans "Completed Quizzes" %}</p>
+            <p class="text-sm text-gray-600 lang-hy">{% trans "Ավարտված հարցաշարեր" %}</p>
+            <p class="text-2xl font-semibold">{{ scores|length }}</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+            <p class="text-sm text-gray-600 lang-en">{% trans "In Progress" %}</p>
+            <p class="text-sm text-gray-600 lang-hy">{% trans "Ընթացքի մեջ" %}</p>
+            <p class="text-2xl font-semibold">{{ checklists|length }}</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+            <p class="text-sm text-gray-600 lang-en">{% trans "Average Score" %}</p>
+            <p class="text-sm text-gray-600 lang-hy">{% trans "Միջին միավոր" %}</p>
+            <p class="text-2xl font-semibold">{{ average_score|default:"N/A" }}%</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+            <p class="text-sm text-gray-600 lang-en">{% trans "Frameworks" %}</p>
+            <p class="text-sm text-gray-600 lang-hy">{% trans "Ստանդարտներ" %}</p>
+            <p class="text-2xl font-semibold">{{ standards|length }}</p>
+        </div>
+    </div>
+
+    <!-- Quiz Cards -->
+    <div id="quiz-cards-grid">
+        <div class="flex justify-between items-center mb-4">
+            <h2 id="section-title" class="text-xl font-semibold lang-en">{% trans "Available Compliance Quizzes" %}</h2>
+            <h2 id="section-title-hy" class="text-xl font-semibold lang-hy">{% trans "Հասանելի համապատասխանության հարցաշարեր" %}</h2>
+            <button id="toggle-view-btn" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 lang-en">{% trans "Your Compliance Score" %}</button>
+            <button id="toggle-view-btn-hy" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 lang-hy">{% trans "Ձեր համապատասխանության միավոր" %}</button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for quiz in quizzes %}
+                <div class="bg-white p-6 rounded-lg shadow hover:scale-105 transition-transform">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-12 h-12 mr-4" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill "none" stroke="#e5e7eb" stroke-width="5"/>
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="#8b5cf6" stroke-width="5" stroke-dasharray="283" stroke-dashoffset="{% if quiz.score is not None %}{{ 283|sub:quiz.score|mul:2.83 }}{% else %}283{% endif %}"/>
+                        </svg>
+                        <div>
+                            <h4 class="text-lg font-semibold">{{ quiz.title }}</h4>
+                            <p class="text-sm text-gray-600">{{ quiz.questions|length }} {% trans "questions" %}, ~{{ quiz.questions|length|div:2 }} {% trans "min" %}</p>
+                        </div>
+                    </div>
+                    <a href="{% url 'assessments:quiz' quiz.pk %}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 lang-en">{% trans "Start Quiz" %}</a>
+                    <a href="{% url 'assessments:quiz' quiz.pk %}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 lang-hy">{% trans "Սկսել հարցաշար" %}</a>
+                </div>
             {% empty %}
-                <li>No tasks available.</li>
+                <p class="lang-en">{% trans "No quizzes available." %}</p>
+                <p class="lang-hy">{% trans "Հարցաշարեր չկան:" %}</p>
             {% endfor %}
-        </ul>
-    </section>
-    <section>
-        <h2>Quick Links</h2>
-        <ul>
-            <li><a href="{% url 'training:training_list' %}">Training Modules</a></li>
-            <li><a href="{% url 'reports:report_list' %}">Reports</a></li>
-        </ul>
-    </section>
+        </div>
+    </div>
+
+    <!-- Compliance Score View -->
+    <div id="compliance-score-view" class="hidden">
+        <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-6 rounded-lg shadow mb-6 text-center">
+            <h3 class="text-xl font-semibold mb-4 lang-en">{% trans "Overall Compliance Score" %}</h3>
+            <h3 class="text-xl font-semibold mb-4 lang-hy">{% trans "Ընդհանուր համապատասխանության միավոր" %}</h3>
+            <canvas id="spider-chart" class="w-64 h-64 mx-auto"></canvas>
+            <div class="text-4xl font-bold mt-4">{{ average_score|default:"80" }}%</div>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow mb-6">
+            <h3 class="text-xl font-semibold mb-4 lang-en">{% trans "Breakdown by Framework" %}</h3>
+            <h3 class="text-xl font-semibold mb-4 lang-hy">{% trans "Բաշխում ստանդարտներով" %}</h3>
+            <div class="space-y-4">
+                {% for score in scores %}
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <span class="text-sm font-medium">{{ score.quiz.title }}</span>
+                        <span class="text-green-600 font-semibold">{{ score.score }}%</span>
+                    </div>
+                {% empty %}
+                    <p class="lang-en">{% trans "No compliance scores available." %}</p>
+                    <p class="lang-hy">{% trans "Համապատասխանության միավորներ չկան:" %}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Spider Chart
+        const ctx = document.getElementById('spider-chart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: [{% for score in scores %}'{{ score.quiz.title }}',{% endfor %}],
+                datasets: [{
+                    label: '{% trans "Compliance Score" %}',
+                    data: [{% for score in scores %}{{ score.score }},{% endfor %}],
+                    fill: true,
+                    backgroundColor: 'rgba(139, 92, 246, 0.2)',
+                    borderColor: 'rgba(139, 92, 246, 1)',
+                    pointBackgroundColor: 'rgba(139, 92, 246, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(139, 92, 246, 1)'
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        angleLines: { display: true },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+    </script>
+</div>
 {% endblock %}

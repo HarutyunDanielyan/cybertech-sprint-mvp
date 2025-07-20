@@ -1,0 +1,431 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-20 11:06+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\core\templates\core\frameworks.html:3
+#: .\core\templates\core\frameworks.html:7 .\templates\index.html:51
+msgid "Supported Frameworks"
+msgstr ""
+
+#: .\core\templates\core\frameworks.html:8 .\templates\index.html:52
+msgid "Աջակցվող ստանդարտներ"
+msgstr ""
+
+#: .\core\templates\core\frameworks.html:14
+msgid "Industry"
+msgstr ""
+
+#: .\core\templates\core\frameworks.html:15
+msgid "Company Size"
+msgstr ""
+
+#: .\core\templates\core\frameworks.html:16
+msgid "Select"
+msgstr ""
+
+#: .\core\templates\core\frameworks.html:19
+msgid "No standards available."
+msgstr ""
+
+#: .\core\templates\core\frameworks.html:20
+msgid "Ստանդարտներ չկան:"
+msgstr ""
+
+#: .\core\templates\core\quick_start.html:3 .\templates\index.html:40
+msgid "Quick Start"
+msgstr ""
+
+#: .\core\templates\core\quick_start.html:7
+msgid "Quick Start with Moderat"
+msgstr ""
+
+#: .\core\templates\core\quick_start.html:8
+msgid "Արագ մեկնարկ Moderat-ով"
+msgstr ""
+
+#: .\core\templates\core\quick_start.html:11 .\templates\index.html:12
+msgid "Start Free Trial"
+msgstr ""
+
+#: .\core\templates\core\quick_start.html:12 .\templates\index.html:13
+msgid "Սկսել անվճար փորձաշրջան"
+msgstr ""
+
+# View-երից ավելացված տեքստեր
+#: .\core\views.py:24
+msgid "Streamline Your Compliance Journey with Moderat"
+msgstr ""
+
+#: .\core\views.py:25
+msgid ""
+"Moderat provides automated compliance tools for GDPR, ISO 27001, and more."
+msgstr ""
+
+#: .\core\views.py:33
+msgid "Get Started with Moderat Compliance"
+msgstr ""
+
+#: .\core\views.py:34
+msgid ""
+"Our platform simplifies compliance with automated assessments and training."
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:3
+msgid "User Dashboard"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:7
+msgid "Compliance Dashboard"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:8
+msgid "Համապատասխանության Dashboard"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:9
+msgid "Welcome"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:9
+msgid "Last login"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:10
+msgid "Բարի գալուստ"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:10
+msgid "Վերջին մուտքը"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:16
+msgid "Completed Quizzes"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:17
+msgid "Ավարտված հարցաշարեր"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:21
+msgid "In Progress"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:22
+msgid "Ընթացքի մեջ"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:26
+msgid "Average Score"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:27
+msgid "Միջին միավոր"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:31
+msgid "Frameworks"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:32
+msgid "Ստանդարտներ"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:40
+msgid "Available Compliance Quizzes"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:41
+msgid "Հասանելի համապատասխանության հարցաշարեր"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:42
+msgid "Your Compliance Score"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:43
+msgid "Ձեր համապատասխանության միավոր"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:55
+msgid "questions"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:55
+msgid "min"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:58
+msgid "Start Quiz"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:59
+msgid "Սկսել հարցաշար"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:62
+msgid "No quizzes available."
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:63
+msgid "Հարցաշարեր չկան:"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:71
+msgid "Overall Compliance Score"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:72
+msgid "Ընդհանուր համապատասխանության միավոր"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:77
+msgid "Breakdown by Framework"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:78
+msgid "Բաշխում ստանդարտներով"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:86
+msgid "No compliance scores available."
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:87
+msgid "Համապատասխանության միավորներ չկան:"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\user.html:101
+msgid "Compliance Score"
+msgstr ""
+
+#: .\registration\templates\registration\pricing_plans.html:3
+msgid "Pricing Plans"
+msgstr ""
+
+#: .\registration\templates\registration\pricing_plans.html:7
+msgid "Choose Your Plan"
+msgstr ""
+
+#: .\registration\templates\registration\pricing_plans.html:8
+msgid "Ընտրեք Ձեր պլանը"
+msgstr ""
+
+#: .\registration\templates\registration\pricing_plans.html:15
+msgid "Select Plan"
+msgstr ""
+
+#: .\registration\templates\registration\pricing_plans.html:16
+msgid "Ընտրել պլան"
+msgstr ""
+
+#: .\registration\templates\registration\pricing_plans.html:19
+msgid "No pricing plans available."
+msgstr ""
+
+#: .\registration\templates\registration\pricing_plans.html:20
+msgid "Գնային պլաններ չկան:"
+msgstr ""
+
+#: .\templates\base.html:32 .\templates\base.html:95
+msgid "Product"
+msgstr ""
+
+#: .\templates\base.html:34
+msgid "Automated Compliance"
+msgstr ""
+
+#: .\templates\base.html:38
+msgid "Armenian Cybersecurity"
+msgstr ""
+
+#: .\templates\base.html:42
+msgid "Solutions"
+msgstr ""
+
+#: .\templates\base.html:44
+msgid "For Enterprises"
+msgstr ""
+
+#: .\templates\base.html:45
+msgid "For SMBs"
+msgstr ""
+
+#: .\templates\base.html:48 .\templates\base.html:96
+msgid "Standards"
+msgstr ""
+
+#: .\templates\base.html:49 .\templates\base.html:97
+msgid "Training"
+msgstr ""
+
+#: .\templates\base.html:50 .\templates\base.html:98
+msgid "Dashboard"
+msgstr ""
+
+#: .\templates\base.html:59 .\templates\base.html:104
+msgid "Logout"
+msgstr ""
+
+#: .\templates\base.html:62 .\templates\base.html:107 .\templates\base.html:131
+#: .\templates\base.html:139 .\users\templates\users\login.html:3
+#: .\users\templates\users\login.html:7 .\users\templates\users\login.html:18
+msgid "Login"
+msgstr ""
+
+#: .\templates\base.html:63 .\templates\base.html:108 .\templates\base.html:132
+#: .\users\templates\users\login.html:8
+msgid "Մուտք"
+msgstr ""
+
+#: .\templates\base.html:64 .\templates\base.html:109
+#: .\users\templates\users\login.html:21
+msgid "Register"
+msgstr ""
+
+#: .\templates\base.html:65 .\templates\base.html:110
+msgid "Գրանցվել"
+msgstr ""
+
+#: .\templates\base.html:70 .\templates\base.html:115
+msgid "English"
+msgstr ""
+
+#: .\templates\base.html:75 .\templates\base.html:120
+msgid "Հայերեն"
+msgstr ""
+
+#: .\templates\base.html:133 .\users\templates\users\login.html:9
+msgid "Use demo credentials: demo@moderat.com / demo123"
+msgstr ""
+
+#: .\templates\base.html:134 .\users\templates\users\login.html:10
+msgid "Օգտագործեք դեմո տվյալներ՝ demo@moderat.com / demo123"
+msgstr ""
+
+#: .\templates\base.html:138 .\users\templates\users\login.html:15
+msgid "Invalid email or password"
+msgstr ""
+
+#: .\templates\base.html:140 .\users\templates\users\login.html:19
+msgid "Մուտք գործել"
+msgstr ""
+
+#: .\templates\base.html:142
+msgid "Close"
+msgstr ""
+
+#: .\templates\base.html:152
+msgid "Contact: info@moderat.com | Phone: +374 123 456 789"
+msgstr ""
+
+#: .\templates\base.html:153
+msgid "Հաշվի գաղտնիության քաղաքականություն և պայմաններ"
+msgstr ""
+
+#: .\templates\index.html:7
+msgid "Check your compliance with us fast and easy"
+msgstr ""
+
+#: .\templates\index.html:8
+msgid "Ստուգեք Ձեր համապատասխանությունը արագ և հեշտ"
+msgstr ""
+
+#: .\templates\index.html:14
+msgid "View Dashboard"
+msgstr ""
+
+#: .\templates\index.html:15
+msgid "Դիտել Dashboard"
+msgstr ""
+
+#: .\templates\index.html:18
+msgid "Compliance Dashboard Preview"
+msgstr ""
+
+#: .\templates\index.html:19
+msgid "Համապատասխանության Dashboard-ի նախադիտում"
+msgstr ""
+
+#: .\templates\index.html:28
+msgid "GDPR Compliance (Sample)"
+msgstr ""
+
+#: .\templates\index.html:29
+msgid "GDPR համապատասխանություն (նմուշ)"
+msgstr ""
+
+#: .\templates\index.html:41
+msgid "Արագ մեկնարկ"
+msgstr ""
+
+#: .\templates\index.html:42
+msgid "Begin your compliance journey with our automated tools."
+msgstr ""
+
+#: .\templates\index.html:43
+msgid "Սկսեք Ձեր համապատասխանության ճանապարհը մեր ավտոմատացված գործիքներով:"
+msgstr ""
+
+#: .\templates\index.html:44
+msgid "Get Started"
+msgstr ""
+
+#: .\templates\index.html:45
+msgid "Սկսել"
+msgstr ""
+
+#: .\templates\index.html:74
+msgid "Trusted by Organizations"
+msgstr ""
+
+#: .\templates\index.html:75
+msgid "Վստահված կազմակերպությունների կողմից"
+msgstr ""
+
+#: .\templates\index.html:78
+msgid "Moderat streamlined our GDPR compliance process!"
+msgstr ""
+
+#: .\templates\index.html:79
+msgid "Moderat-ը պարզեցրեց մեր GDPR համապատասխանության գործընթացը!"
+msgstr ""
+
+#: .\templates\index.html:83
+msgid "The dashboard provides clear insights into our compliance status."
+msgstr ""
+
+#: .\templates\index.html:84
+msgid ""
+"Dashboard-ը տրամադրում է հստակ պատկերացում մեր համապատասխանության մասին:"
+msgstr ""
+
+#: .\templates\index.html:88
+msgid "Easy to use and highly effective for ISO 27001."
+msgstr ""
+
+#: .\templates\index.html:89
+msgid "Հեշտ օգտագործման և բարձր արդյունավետ ISO 27001-ի համար:"
+msgstr ""
+
+#: .\users\templates\users\login.html:17
+msgid "Forgot Password?"
+msgstr ""
+
+#: .\users\templates\users\login.html:21
+msgid "Don't have an account?"
+msgstr ""

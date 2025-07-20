@@ -1,4 +1,3 @@
-# Այս app-ը կպարունակի ուսուցման մոդուլներ և օգտատերերի առաջընթաց։
 from django.db import models
 from users.models import User
 

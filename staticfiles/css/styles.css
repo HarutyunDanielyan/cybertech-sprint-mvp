@@ -1,11 +1,27 @@
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-header { background: #333; color: white; padding: 10px; }
-nav ul { list-style: none; display: flex; gap: 15px; }
-nav ul li a { color: white; text-decoration: none; }
-.hero-banner { text-align: center; }
-.hero-banner img { max-width: 100%; height: auto; }
-.about, .actions { padding: 20px; }
-footer { background: #333; color: white; text-align: center; padding: 10px; }
-@media (max-width: 768px) {
-    nav ul { flex-direction: column; text-align: center; }
+/* Custom styles for Moderat Compliance Platform */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.nav-dropdown {
+    transition: all 0.3s ease;
+}
+
+.nav-dropdown:hover {
+    background-color: #f3f4f6;
+}
+
+.chart-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.progress-circle {
+    transition: stroke-dashoffset 1s ease-in-out;
+}
+
+button, a.bg-purple-600 {
+    transition: background-color 0.3s ease;
 }
