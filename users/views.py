@@ -1,24 +1,13 @@
 from django.contrib.auth.views import LoginView, LogoutView
+from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login
-from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import user_passes_test
+from django.shortcuts import render
+from .forms import CustomUserCreationForm, ProfileUpdateForm
 from .models import User
-from django import forms
-
-class CustomUserCreationForm(UserCreationForm):
-    email = forms.EmailField(required=True)
-    role = forms.ChoiceField(choices=User.ROLES, required=True)
-
-    class Meta:
-        model = User
-        fields = ['username', 'email', 'password1', 'password2', 'role']
 
 class CustomLoginView(LoginView):
     template_name = 'users/login.html'
-    redirect_authenticated_user = True
-    success_url = reverse_lazy('dashboard:roadmap')
 
 class CustomLogoutView(LogoutView):
     next_page = reverse_lazy('users:login')
@@ -26,9 +15,17 @@ class CustomLogoutView(LogoutView):
 class CustomRegisterView(CreateView):
     form_class = CustomUserCreationForm
     template_name = 'users/register.html'
-    success_url = reverse_lazy('dashboard:roadmap')
+    success_url = reverse_lazy('users:login')
 
-    def form_valid(self, form):
-        user = form.save()
-        login(self.request, user)
-        return HttpResponseRedirect(self.success_url)
+class ProfileUpdateView(UpdateView):
+    model = User
+    form_class = ProfileUpdateForm
+    template_name = 'users/profile_update.html'
+    success_url = reverse_lazy('dashboard:roadmap')  # Ստուգեք, որ URL-ը գոյություն ունի
+
+    def get_object(self):
+        return self.request.user
+
+@user_passes_test(lambda u: u.role == 'auditor')
+def auditor_only_view(request):
+    return render(request, 'users/auditor_only.html')

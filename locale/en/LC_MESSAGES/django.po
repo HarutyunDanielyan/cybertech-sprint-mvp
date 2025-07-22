@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-20 11:06+0400\n"
+"POT-Creation-Date: 2025-07-22 22:31+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -284,6 +284,8 @@ msgstr ""
 #: .\templates\base.html:62 .\templates\base.html:107 .\templates\base.html:131
 #: .\templates\base.html:139 .\users\templates\users\login.html:3
 #: .\users\templates\users\login.html:7 .\users\templates\users\login.html:18
+#: .\users\templates\users\password_reset_complete.html:10
+#: .\users\templates\users\register.html:19
 msgid "Login"
 msgstr ""
 
@@ -294,10 +296,14 @@ msgstr ""
 
 #: .\templates\base.html:64 .\templates\base.html:109
 #: .\users\templates\users\login.html:21
+#: .\users\templates\users\register.html:3
+#: .\users\templates\users\register.html:7
+#: .\users\templates\users\register.html:16
 msgid "Register"
 msgstr ""
 
 #: .\templates\base.html:65 .\templates\base.html:110
+#: .\users\templates\users\register.html:17
 msgid "Գրանցվել"
 msgstr ""
 
@@ -422,10 +428,122 @@ msgstr ""
 msgid "Հեշտ օգտագործման և բարձր արդյունավետ ISO 27001-ի համար:"
 msgstr ""
 
+#: .\users\templates\users\auditor_only.html:3
+msgid "Auditor Page"
+msgstr ""
+
+#: .\users\templates\users\auditor_only.html:7
+msgid "Welcome, Auditor"
+msgstr ""
+
+#: .\users\templates\users\auditor_only.html:8
+msgid "Բարի գալուստ, աուդիտոր"
+msgstr ""
+
+#: .\users\templates\users\auditor_only.html:9
+msgid "This page is accessible only to auditors."
+msgstr ""
+
 #: .\users\templates\users\login.html:17
 msgid "Forgot Password?"
 msgstr ""
 
 #: .\users\templates\users\login.html:21
 msgid "Don't have an account?"
+msgstr ""
+
+#: .\users\templates\users\password_reset.html:3
+#: .\users\templates\users\password_reset.html:7
+msgid "Password Reset"
+msgstr ""
+
+#: .\users\templates\users\password_reset.html:8
+msgid "Գաղտնաբառի վերականգնում"
+msgstr ""
+
+#: .\users\templates\users\password_reset.html:12
+msgid "Send Reset Link"
+msgstr ""
+
+#: .\users\templates\users\password_reset_complete.html:3
+#: .\users\templates\users\password_reset_complete.html:7
+msgid "Password Reset Complete"
+msgstr ""
+
+#: .\users\templates\users\password_reset_complete.html:8
+msgid "Գաղտնաբառը վերականգնված է"
+msgstr ""
+
+#: .\users\templates\users\password_reset_complete.html:9
+msgid "Your password has been reset successfully."
+msgstr ""
+
+#: .\users\templates\users\password_reset_confirm.html:3
+#: .\users\templates\users\password_reset_confirm.html:7
+msgid "Set New Password"
+msgstr ""
+
+#: .\users\templates\users\password_reset_confirm.html:8
+msgid "Սահմանել նոր գաղտնաբառ"
+msgstr ""
+
+#: .\users\templates\users\password_reset_confirm.html:12
+#: .\users\templates\users\profile_update.html:12
+msgid "Save"
+msgstr ""
+
+#: .\users\templates\users\password_reset_done.html:3
+#: .\users\templates\users\password_reset_done.html:7
+msgid "Email Sent"
+msgstr ""
+
+#: .\users\templates\users\password_reset_done.html:8
+msgid "Էլ. փոստը ուղարկված է"
+msgstr ""
+
+#: .\users\templates\users\password_reset_done.html:9
+msgid "We have sent you an email with instructions to reset your password."
+msgstr ""
+
+#: .\users\templates\users\password_reset_email.html:2
+msgid "Hello,"
+msgstr ""
+
+#: .\users\templates\users\password_reset_email.html:3
+msgid ""
+"Someone has requested a password reset for your account. Follow the link "
+"below to reset your password:"
+msgstr ""
+
+#: .\users\templates\users\password_reset_email.html:5
+msgid "If you didn't request this, please ignore this email."
+msgstr ""
+
+#: .\users\templates\users\password_reset_email.html:6
+msgid "Thank you,"
+msgstr ""
+
+#: .\users\templates\users\password_reset_subject.html:1
+msgid "Password Reset Request"
+msgstr ""
+
+#: .\users\templates\users\profile_update.html:3
+#: .\users\templates\users\profile_update.html:7
+msgid "Update Profile"
+msgstr ""
+
+#: .\users\templates\users\profile_update.html:8
+msgid "Թարմացնել պրոֆիլը"
+msgstr ""
+
+#: .\users\templates\users\register.html:8
+msgid "Գրանցում"
+msgstr ""
+
+#: .\users\templates\users\register.html:10
+msgid "Please correct the following errors:"
+msgstr ""
+
+#: .\users\templates\users\register.html:19
+msgid "Already have an account?"
 msgstr ""

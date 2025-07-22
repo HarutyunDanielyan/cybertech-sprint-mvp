@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}Մուտքը ձախողվեց{% endblock %}
+{% block content %}
+    <h1>Մուտքը ձախողվեց</h1>
+    <p>Հղումը սխալ է կամ ժամկետանց։ Խնդրում ենք փորձել կրկին։</p>
+    <a href="{% url 'users:login' %}">Վերադառնալ</a>
+{% endblock %}

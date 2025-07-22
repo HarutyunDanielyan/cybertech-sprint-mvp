@@ -1,15 +1,22 @@
 {% extends 'base.html' %}
-{% block title %}Register{% endblock %}
+{% load static i18n %}
+{% block title %}{% trans "Register" %}{% endblock %}
 {% block content %}
-    <h1>Register</h1>
-    {% if form.errors %}
-        <p style="color: red;">Please correct the following errors:</p>
-        {{ form.errors }}
-    {% endif %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Register</button>
-    </form>
-    <p>Already have an account? <a href="{% url 'users:login' %}">Login</a></p>
+<section class="py-20 bg-gray-100">
+    <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow">
+        <h1 class="text-2xl font-bold mb-4">{% trans "Register" %}</h1>
+        <h1 class="text-2xl font-bold mb-4">{% trans "Գրանցում" %}</h1>
+        {% if form.errors %}
+            <p style="color: red;">{% trans "Please correct the following errors:" %}</p>
+            {{ form.errors }}
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="w-full bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">{% trans "Register" %}</button>
+            <button type="submit" class="w-full bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">{% trans "Գրանցվել" %}</button>
+        </form>
+        <p class="mt-4 text-center">{% trans "Already have an account?" %} <a href="{% url 'users:login' %}" class="text-blue-600 hover:underline">{% trans "Login" %}</a></p>
+    </div>
+</section>
 {% endblock %}
