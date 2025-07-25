@@ -1,20 +1,20 @@
-import React from 'react';
+import React from 'react'; // Убрали useEffect и useState, так как они больше не нужны
 import { useTranslation } from 'react-i18next';
 import { useNavigation } from '../context/NavigationContext';
-import './TestTypeSelectionPage.css'; // Подключаем новые стили
+import './TestTypeSelectionPage.css';
 
 // Вспомогательный компонент для отображения выбранных критериев
 const SelectionSummary = ({ criteria }) => {
     const { t } = useTranslation();
+    const validCriteria = Object.entries(criteria).filter(([key, value]) => value);
+
     return (
         <ul className="selection-summary">
-            {Object.entries(criteria).map(([key, value]) =>
-                value ? (
-                    <li key={key}>
-                        <strong>{t(`filter_label_${key}`)}:</strong>
-                        <span>{t(`${key}_${value}`)}</span>
-                    </li>
-                ) : null
+            {validCriteria.map(([key, value]) =>
+                <li key={key}>
+                    <strong>{t(`filter_label_${key}`)}:</strong>
+                    <span>{t(`${key}_${value}`)}</span>
+                </li>
             )}
         </ul>
     );
@@ -22,13 +22,29 @@ const SelectionSummary = ({ criteria }) => {
 
 const TestTypeSelectionPage = () => {
     const { t } = useTranslation();
-    const { setCurrentPage, setTestType, ...filters } = useNavigation();
+    const { setCurrentPage, setTestType, setSelectedCategory, ...filters } = useNavigation();
 
-    const handleSelect = (type) => {
-        setTestType(type);
+    // Обработчик для первого варианта (предложение системы)
+    const handleSelectOurSuggestion = () => {
+        setTestType('our_suggestion');
+        setSelectedCategory('gdpr');
         setCurrentPage('quiz');
     };
 
+    // Обработчик для второго варианта (выбор клиента)
+    const handleSelectClientChoice = () => {
+        // Проверяем, выбрал ли клиент именно GDPR
+        if (filters.standard === 'gdpr') {
+            setTestType('client_choice');
+            setSelectedCategory('gdpr');
+            setCurrentPage('quiz');
+        } else {
+            // Если выбран другой стандарт (или ни одного), показываем сообщение
+            alert(t('test_not_ready_message'));
+        }
+    };
+
+    // Собираем объекты с критериями для каждой карточки
     const mandatoryCriteria = {
         industry: filters.industry,
         location: filters.location,
@@ -47,14 +63,17 @@ const TestTypeSelectionPage = () => {
             <h1>{t('test_type_selection_title')}</h1>
             <div className="selection-grid">
                 {/* Карточка №1: Наш вариант */}
-                <div className="selection-card" onClick={() => handleSelect('our_suggestion')}>
+                <div className="selection-card" onClick={handleSelectOurSuggestion}>
                     <h2>{t('test_type_our_suggestion')}</h2>
                     <p>{t('test_type_our_suggestion_desc')}</p>
                     <SelectionSummary criteria={mandatoryCriteria} />
                 </div>
 
                 {/* Карточка №2: Вариант клиента */}
-                <div className="selection-card" onClick={() => handleSelect('client_choice')}>
+                <div
+                    className="selection-card" // Убрали класс disabled, так как карточка всегда кликабельна
+                    onClick={handleSelectClientChoice} // Используем новый обработчик
+                >
                     <h2>{t('test_type_client_choice')}</h2>
                     <p>{t('test_type_client_choice_desc')}</p>
                     <SelectionSummary criteria={allCriteria} />

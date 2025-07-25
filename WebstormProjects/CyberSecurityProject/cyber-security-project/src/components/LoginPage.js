@@ -5,20 +5,16 @@ import './Auth.css';
 
 const LoginPage = () => {
     const { t } = useTranslation();
-    const { setCurrentPage } = useNavigation();
+    // Получаем функцию login из контекста
+    const { setCurrentPage, login } = useNavigation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Здесь должна быть реальная логика входа
-        // После успешного входа перенаправляем на дашборд
-        setCurrentPage('dashboard');
-    };
-
-    const handleRegisterClick = (e) => {
-        e.preventDefault();
-        setCurrentPage('register');
+        // Здесь должна быть реальная проверка пароля
+        // После успешной проверки вызываем login()
+        login();
     };
 
     return (
@@ -36,7 +32,7 @@ const LoginPage = () => {
                 <button type="submit" className="auth-button">{t('login_button')}</button>
                 <p className="auth-switch">
                     {t('login_no_account')}{' '}
-                    <a href="#" onClick={handleRegisterClick}>{t('nav_register')}</a>
+                    <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('register'); }}>{t('nav_register')}</a>
                 </p>
             </form>
         </div>

@@ -5,7 +5,17 @@ import './FilterPage.css';
 
 const FilterPage = () => {
     const { t } = useTranslation();
-    const { setCurrentPage, setIndustry, setLocation, setMarketLocation, setEmployeeCount, setStandard, setFramework } = useNavigation();
+    const {
+        setCurrentPage,
+        setIndustry,
+        setLocation,
+        setMarketLocation,
+        setEmployeeCount,
+        setStandard,
+        setFramework,
+        setSelectedCategory,
+        setTestType
+    } = useNavigation();
 
     const [selections, setSelections] = useState({
         industry: null, location: null, market: null, employees: null,
@@ -26,6 +36,7 @@ const FilterPage = () => {
     };
 
     const handleSubmit = () => {
+        // Сохраняем все выборы в глобальный контекст
         setIndustry(selections.industry);
         setLocation(selections.location);
         setMarketLocation(selections.market);
@@ -33,9 +44,14 @@ const FilterPage = () => {
         setStandard(selections.standard);
         setFramework(selections.framework);
 
+        // КЛЮЧЕВАЯ ЛОГИКА:
+        // Если выбраны необязательные поля, переходим на страницу выбора типа теста
         if (selections.standard || selections.framework) {
             setCurrentPage('testTypeSelection');
         } else {
+            // Иначе (1-й вариант) сразу предлагаем тест GDPR
+            setSelectedCategory('gdpr');
+            setTestType('our_suggestion');
             setCurrentPage('quiz');
         }
     };

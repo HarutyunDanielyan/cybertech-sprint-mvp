@@ -7,7 +7,7 @@
 }
 
 .chat-toggle-btn {
-    background-color: #007bff;
+    background-color: #764ba2;
     color: white;
     border: none;
     width: 60px;
@@ -33,7 +33,7 @@
 }
 
 .chat-header {
-    background: #007bff;
+    background: #764ba2;
     color: white;
     padding: 15px;
     display: flex;
@@ -84,7 +84,7 @@
 }
 
 .chat-footer button {
-    background: #007bff;
+    background: #764ba2;
     color: white;
     border: none;
     padding: 10px 15px;

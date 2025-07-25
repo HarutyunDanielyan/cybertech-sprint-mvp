@@ -6,6 +6,8 @@
     padding: 1rem 2rem;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
 }
 
 /* Стили для логотипа */
@@ -16,13 +18,14 @@
     text-decoration: none;
 }
 
-/* Ключевые стили для списка ссылок, чтобы они были в ряд */
+/* Стили для списка ссылок */
 .navbar-links {
     list-style: none;
-    display: flex; /* Это свойство выстраивает элементы в ряд */
-    gap: 2rem; /* Расстояние между ссылками */
+    display: flex;
+    gap: 2rem;
     margin: 0;
     padding: 0;
+    align-items: center;
 }
 
 /* Стили для самих ссылок */
@@ -31,16 +34,76 @@
     color: #555;
     font-weight: 500;
     transition: color 0.3s ease;
+    padding: 0.5rem 0; /* Добавляем отступ для удобства наведения */
 }
 
 .navbar-links a:hover {
-    color: #007bff;
+    color: #764ba2;
 }
 
-/* Стили для кнопки "Регистрация" */
+/* Контейнер для элемента с выпадающим меню */
+.dropdown-container {
+    position: relative;
+}
+
+/* Стили для самого выпадающего меню */
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Появляется сразу под родительским элементом */
+    left: 50%;
+    transform: translateX(-50%); /* Центрируем меню */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    padding: 0.5rem 0;
+    list-style: none;
+    min-width: 220px; /* Минимальная ширина меню */
+    z-index: 100;
+    border: 1px solid #f0f0f0;
+    margin-top: 0.5rem; /* Небольшой отступ сверху */
+}
+
+/* Стили для элементов выпадающего меню */
+.dropdown-menu li a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap; /* Чтобы текст не переносился */
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f8f9fa;
+}
+
+/* Контейнер для кнопок справа */
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Стили для обычной кнопки (например, "Login") */
+.navbar-button {
+    background: none;
+    border: none;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar-button:hover {
+    color: #764ba2;
+}
+
+/* Стили для основной кнопки (CTA) */
 .navbar-cta {
     padding: 0.7rem 1.5rem;
-    background-color: #007bff;
+    background-color: #764ba2;
     color: white;
     border: none;
     border-radius: 5px;
@@ -51,4 +114,19 @@
 
 .navbar-cta:hover {
     background-color: #0056b3;
+}
+
+/* Стили для email пользователя */
+.user-email {
+    font-weight: 500;
+    color: #333;
+}
+
+/* Стили для кнопки выхода */
+.logout-btn {
+    background-color: #6c757d;
+}
+
+.logout-btn:hover {
+    background-color: #5a6268;
 }

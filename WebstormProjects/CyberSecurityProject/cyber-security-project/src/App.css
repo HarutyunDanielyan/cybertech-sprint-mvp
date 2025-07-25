@@ -1,7 +1,7 @@
 /* Стилизация узлов в React Flow */
 .react-flow__node {
   background-color: #ffffff;
-  border: 2px solid #007bff;
+  border: 2px solid #764ba2;
   border-radius: 8px;
   padding: 10px 20px;
   font-size: 16px;
@@ -19,7 +19,7 @@
 
 /* Стилизация корневого узла (с типом 'input') */
 .react-flow__node-input {
-  background-color: #007bff;
+  background-color: #764ba2;
   border-color: #0056b3;
   color: white;
 }
@@ -33,6 +33,6 @@
 
 /* Стилизация линий-связей */
 .react-flow__edge-path {
-  stroke: #007bff;
+  stroke: #764ba2;
   stroke-width: 2;
 }

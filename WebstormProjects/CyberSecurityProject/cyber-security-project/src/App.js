@@ -9,7 +9,9 @@ import SupportChat from './components/SupportChat';
 import HomePage from './components/HomePage';
 import FilterPage from './components/FilterPage';
 import TestTypeSelectionPage from './components/TestTypeSelectionPage';
-import ClientDashboard from './components/ClientDashboard'; // 1. Импортируем дашборд
+import ClientDashboard from './components/ClientDashboard';
+import WhereToStartPage from './components/WhereToStartPage';
+import QuizResultPage from './components/QuizResultPage';
 import './App.css';
 
 function App() {
@@ -22,7 +24,9 @@ function App() {
             case 'filters': return <FilterPage />;
             case 'testTypeSelection': return <TestTypeSelectionPage />;
             case 'quiz': return <Quiz />;
-            case 'dashboard': return <ClientDashboard />; // 2. Добавляем новый маршрут
+            case 'quizResult': return <QuizResultPage />;
+            case 'dashboard': return <ClientDashboard />;
+            case 'whereToStart': return <WhereToStartPage />;
             case 'home':
             default: return <HomePage />;
         }
