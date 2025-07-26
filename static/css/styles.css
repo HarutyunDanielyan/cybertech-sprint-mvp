@@ -1,0 +1,27 @@
+/* Custom styles for Moderat Compliance Platform */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.nav-dropdown {
+    transition: all 0.3s ease;
+}
+
+.nav-dropdown:hover {
+    background-color: #f3f4f6;
+}
+
+.chart-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.progress-circle {
+    transition: stroke-dashoffset 1s ease-in-out;
+}
+
+button, a.bg-purple-600 {
+    transition: background-color 0.3s ease;
+}

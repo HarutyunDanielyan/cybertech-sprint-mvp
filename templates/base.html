@@ -1,0 +1,185 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE|default:'en' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Moderat Compliance Platform{% endblock %}</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js for dashboard charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        .lang-en { display: {% if request.LANGUAGE_CODE == 'en' %}block{% else %}none{% endif %}; }
+        .lang-hy { display: {% if request.LANGUAGE_CODE == 'hy' %}block{% else %}none{% endif %}; }
+        .active { background-color: #D3D3D3; }
+        .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease-in-out; }
+        .mobile-menu.open { transform: translateX(0); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+    <header class="bg-white shadow">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="text-2xl font-bold text-purple-600">Moderat</div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-purple-600">{% trans "Product" %}</button>
+                        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 p-4 w-48">
+                            <a href="{% url 'core:quick_start' %}" class="block py-1 hover:text-purple-600">{% trans "Automated Compliance" %}</a>
+                            <a href="{% url 'core:frameworks' %}" class="block py-1 hover:text-purple-600">GDPR</a>
+                            <a href="{% url 'core:frameworks' %}" class="block py-1 hover:text-purple-600">ISO 27001</a>
+                            <a href="{% url 'core:frameworks' %}" class="block py-1 hover:text-purple-600">NIS 2</a>
+                            <a href="{% url 'core:frameworks' %}" class="block py-1 hover:text-purple-600">{% trans "Armenian Cybersecurity" %}</a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-purple-600">{% trans "Solutions" %}</button>
+                        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 p-4 w-48">
+                            <a href="#" class="block py-1 hover:text-purple-600">{% trans "For Enterprises" %}</a>
+                            <a href="#" class="block py-1 hover:text-purple-600">{% trans "For SMBs" %}</a>
+                        </div>
+                    </div>
+                    <a href="{% url 'standards:standard_list' %}" class="text-gray-700 hover:text-purple-600">{% trans "Standards" %}</a>
+                    <a href="{% url 'training:training_list' %}" class="text-gray-700 hover:text-purple-600">{% trans "Training" %}</a>
+                    <a href="{% url 'dashboard:user' %}" class="text-gray-700 hover:text-purple-600">{% trans "Dashboard" %}</a>
+                </div>
+
+                <!-- Authentication -->
+                <div class="hidden md:flex items-center space-x-4" id="login-buttons">
+                    {% if user.is_authenticated %}
+                        <span class="text-gray-700" id="user-email">{{ user.email }}</span>
+                        <form action="{% url 'users:logout' %}" method="post" class="inline">
+                            {% csrf_token %}
+                            <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">{% trans "Logout" %}</button>
+                        </form>
+                    {% else %}
+                        <a href="{% url 'users:login' %}" id="login-button" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 lang-en">{% trans "Login" %}</a>
+                        <a href="{% url 'users:login' %}" id="login-button-hy" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 lang-hy">{% trans "Մուտք" %}</a>
+                        <a href="{% url 'users:register' %}" id="register-button" class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 lang-en">{% trans "Register" %}</a>
+                        <a href="{% url 'users:register' %}" id="register-button-hy" class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 lang-hy">{% trans "Գրանցվել" %}</a>
+                    {% endif %}
+                    <form action="{% url 'set_language' %}" method="post" class="inline">
+                        {% csrf_token %}
+                        <input name="language" type="hidden" value="en">
+                        <button type="submit" class="px-3 py-1 rounded {% if request.LANGUAGE_CODE == 'en' %}active{% endif %}">🇬🇧 {% trans "English" %}</button>
+                    </form>
+                    <form action="{% url 'set_language' %}" method="post" class="inline">
+                        {% csrf_token %}
+                        <input name="language" type="hidden" value="hy">
+                        <button type="submit" class="px-3 py-1 rounded {% if request.LANGUAGE_CODE == 'hy' %}active{% endif %}">🇦🇲 {% trans "Հայերեն" %}</button>
+                    </form>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-lg md:hidden">
+                <button id="close-menu-btn" class="absolute top-4 right-4 text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <div class="flex flex-col p-4 space-y-4">
+                    <a href="{% url 'core:quick_start' %}" class="text-gray-700 hover:text-purple-600">{% trans "Product" %}</a>
+                    <a href="{% url 'standards:standard_list' %}" class="text-gray-700 hover:text-purple-600">{% trans "Standards" %}</a>
+                    <a href="{% url 'training:training_list' %}" class="text-gray-700 hover:text-purple-600">{% trans "Training" %}</a>
+                    <a href="{% url 'dashboard:user' %}" class="text-gray-700 hover:text-purple-600">{% trans "Dashboard" %}</a>
+                    <div id="mobile-auth" class="space-y-2">
+                        {% if user.is_authenticated %}
+                            <span class="text-gray-700">{{ user.email }}</span>
+                            <form action="{% url 'users:logout' %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 w-full">{% trans "Logout" %}</button>
+                            </form>
+                        {% else %}
+                            <a href="{% url 'users:login' %}" class="block bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 lang-en">{% trans "Login" %}</a>
+                            <a href="{% url 'users:login' %}" class="block bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 lang-hy">{% trans "Մուտք" %}</a>
+                            <a href="{% url 'users:register' %}" class="block bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 lang-en">{% trans "Register" %}</a>
+                            <a href="{% url 'users:register' %}" class="block bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 lang-hy">{% trans "Գրանցվել" %}</a>
+                        {% endif %}
+                        <form action="{% url 'set_language' %}" method="post" class="inline">
+                            {% csrf_token %}
+                            <input name="language" type="hidden" value="en">
+                            <button type="submit" class="px-3 py-1 rounded {% if request.LANGUAGE_CODE == 'en' %}active{% endif %} w-full text-left">🇬🇧 {% trans "English" %}</button>
+                        </form>
+                        <form action="{% url 'set_language' %}" method="post" class="inline">
+                            {% csrf_token %}
+                            <input name="language" type="hidden" value="hy">
+                            <button type="submit" class="px-3 py-1 rounded {% if request.LANGUAGE_CODE == 'hy' %}active{% endif %} w-full text-left">🇦🇲 {% trans "Հայերեն" %}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg p-6 w-full max-w-md">
+            <h2 class="text-2xl font-bold mb-4 lang-en">{% trans "Login" %}</h2>
+            <h2 class="text-2xl font-bold mb-4 lang-hy">{% trans "Մուտք" %}</h2>
+            <p class="text-gray-600 mb-4 lang-en">{% trans "Use demo credentials: demo@moderat.com / demo123" %}</p>
+            <p class="text-gray-600 mb-4 lang-hy">{% trans "Օգտագործեք դեմո տվյալներ՝ demo@moderat.com / demo123" %}</p>
+            <form id="login-form" method="post" action="{% url 'users:login' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div id="login-error" class="text-red-500 hidden mb-4">{% trans "Invalid email or password" %}</div>
+                <button type="submit" class="w-full bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 lang-en">{% trans "Login" %}</button>
+                <button type="submit" class="w-full bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 lang-hy">{% trans "Մուտք գործել" %}</button>
+            </form>
+            <button id="close-login-modal" class="mt-4 text-gray-600 hover:text-gray-800">{% trans "Close" %}</button>
+        </div>
+    </div>
+
+    <main class="container mx-auto py-8">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p class="mb-2 lang-en">{% trans "Contact: info@moderat.com | Phone: +374 123 456 789" %}</p>
+            <p class="mb-2 lang-hy">{% trans "Հաշվի գաղտնիության քաղաքականություն և պայմաններ" %}</p>
+            <div class="space-x-4">
+                <a href="#" class="text-gray-400 hover:text-gray-300">Facebook</a>
+                <a href="#" class="text-gray-400 hover:text-gray-300">Twitter</a>
+                <a href="#" class="text-gray-400 hover:text-gray-300">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+
+        // Login Modal
+        const loginModal = document.getElementById('login-modal');
+        const loginBtn = document.getElementById('login-button');
+        const loginBtnHy = document.getElementById('login-button-hy');
+        const closeLoginModal = document.getElementById('close-login-modal');
+        if (loginBtn) loginBtn.addEventListener('click', () => loginModal.classList.remove('hidden'));
+        if (loginBtnHy) loginBtnHy.addEventListener('click', () => loginModal.classList.remove('hidden'));
+        if (closeLoginModal) closeLoginModal.addEventListener('click', () => loginModal.classList.add('hidden'));
+    </script>
+</body>
+</html>

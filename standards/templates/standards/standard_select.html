@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Ընտրել ստանդարտ{% endblock %}
+{% block content %}
+    <h1>Ընտրել {{ standard.name }}</h1>
+    <p>Հաստատե՞լ ընտրությունը:</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Հաստատել</button>
+    </form>
+{% endblock %}

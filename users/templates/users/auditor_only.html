@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+{% block title %}{% trans "Auditor Page" %}{% endblock %}
+{% block content %}
+<section class="py-20 bg-gray-100">
+    <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow">
+        <h1 class="text-2xl font-bold mb-4">{% trans "Welcome, Auditor" %}</h1>
+        <h1 class="text-2xl font-bold mb-4">{% trans "Բարի գալուստ, աուդիտոր" %}</h1>
+        <p>{% trans "This page is accessible only to auditors." %}</p>
+    </div>
+</section>
+{% endblock %}

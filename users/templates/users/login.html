@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+{% block title %}{% trans "Login" %}{% endblock %}
+{% block content %}
+<section class="py-20 bg-gray-100">
+    <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow">
+        <h1 class="text-2xl font-bold mb-4 lang-en">{% trans "Login" %}</h1>
+        <h1 class="text-2xl font-bold mb-4 lang-hy">{% trans "Մուտք" %}</h1>
+        <p class="text-gray-600 mb-4 lang-en">{% trans "Use demo credentials: demo@moderat.com / demo123" %}</p>
+        <p class="text-gray-600 mb-4 lang-hy">{% trans "Օգտագործեք դեմո տվյալներ՝ demo@moderat.com / demo123" %}</p>
+        <form method="post" action="{% url 'users:login' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% if form.errors %}
+                <p class="text-red-500 mb-4">{% trans "Invalid email or password" %}</p>
+            {% endif %}
+            <a href="{% url 'users:password_reset' %}" class="text-blue-600 hover:underline">{% trans "Forgot Password?" %}</a>
+            <button type="submit" class="w-full bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 mt-4 lang-en">{% trans "Login" %}</button>
+            <button type="submit" class="w-full bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 mt-4 lang-hy">{% trans "Մուտք գործել" %}</button>
+        </form>
+        <p class="mt-4 text-center">{% trans "Don't have an account?" %} <a href="{% url 'users:register' %}" class="text-blue-600 hover:underline">{% trans "Register" %}</a></p>
+    </div>
+</section>
+{% endblock %}
