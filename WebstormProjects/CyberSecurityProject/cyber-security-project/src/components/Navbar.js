@@ -34,9 +34,9 @@ const Navbar = () => {
                     {/* Условный рендеринг выпадающего меню */}
                     {isProductMenuOpen && (
                         <ul className="dropdown-menu">
-                            <li><a href="#">{t('dropdown_automated_compliance')}</a></li>
-                            <li><a href="#">{t('dropdown_risk_management')}</a></li>
-                            <li><a href="#">{t('dropdown_audit_management')}</a></li>
+                            <li><a href="#">{t('dropdown_gdpr')}</a></li>
+                            <li><a href="#">{t('dropdown_nis2')}</a></li>
+                            <li><a href="#">{t('dropdown_iso27001')}</a></li>
                         </ul>
                     )}
                 </li>
@@ -48,9 +48,9 @@ const Navbar = () => {
                     {/* Условный рендеринг выпадающего меню */}
                     {isSolutionMenuOpen && (
                         <ul className="dropdown-menu">
-                            <li><a href="#">{t('dropdown_automated_compliance')}</a></li>
-                            <li><a href="#">{t('dropdown_risk_management')}</a></li>
-                            <li><a href="#">{t('dropdown_audit_management')}</a></li>
+                            <li><a href="#">{t('dropdown_compamy_size')}</a></li>
+                            <li><a href="#">{t('dropdown_find_a_partner')}</a></li>
+                            <li><a href="#">{t('dropdown_partners')}</a></li>
                         </ul>
                     )}
                 </li>
@@ -63,9 +63,9 @@ const Navbar = () => {
                     {/* Условный рендеринг выпадающего меню */}
                     {isResourcesMenuOpen && (
                         <ul className="dropdown-menu">
-                            <li><a href="#">{t('dropdown_automated_compliance')}</a></li>
-                            <li><a href="#">{t('dropdown_risk_management')}</a></li>
-                            <li><a href="#">{t('dropdown_audit_management')}</a></li>
+                            <li><a href="#">{t('dropdown_all_resources')}</a></li>
+                            <li><a href="#">{t('dropdown_collections')}</a></li>
+                            <li><a href="#">{t('dropdown_customer_education')}</a></li>
                         </ul>
                     )}
                 </li>
@@ -77,9 +77,10 @@ const Navbar = () => {
                     {/* Условный рендеринг выпадающего меню */}
                     {isCompanyMenuOpen && (
                         <ul className="dropdown-menu">
-                            <li><a href="#">{t('dropdown_automated_compliance')}</a></li>
-                            <li><a href="#">{t('dropdown_risk_management')}</a></li>
-                            <li><a href="#">{t('dropdown_audit_management')}</a></li>
+                            <li><a href="#">{t('dropdown_about')}</a></li>
+                            <li><a href="#">{t('dropdown_careers')}</a></li>
+                            <li><a href="#">{t('dropdown_security')}</a></li>
+                            <li><a href="#">{t('dropdown_press')}</a></li>
                         </ul>
                     )}
                 </li>

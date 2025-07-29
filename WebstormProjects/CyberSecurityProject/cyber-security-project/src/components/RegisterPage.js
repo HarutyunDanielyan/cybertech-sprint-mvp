@@ -23,20 +23,15 @@ const RegisterPage = () => {
                 password,
                 role: userType,
             });
-            // После успешной регистрации вызываем login() с данными пользователя
             login(response.data.user);
         } catch (err) {
-            // Улучшенная обработка ошибок
             if (err.response) {
-                // Ошибка пришла от сервера (например, "пользователь уже существует")
                 setError(err.response.data.message || 'Ошибка регистрации. Проверьте введенные данные.');
                 console.error("Ошибка от сервера:", err.response.data);
             } else if (err.request) {
-                // Запрос был сделан, но ответа не было (CORS, сервер выключен)
                 setError('Failed to connect to server. Check CORS or make sure backend is running.');
                 console.error("Нет ответа от сервера:", err.request);
             } else {
-                // Произошла другая ошибка
                 setError('Произошла непредвиденная ошибка.');
                 console.error('Ошибка:', err.message);
             }
@@ -77,7 +72,6 @@ const RegisterPage = () => {
                     </div>
                 </div>
                 <button type="submit" className="auth-button">{t('register_button')}</button>
-                {/* ... (ссылка на страницу входа) ... */}
                 <p className="auth-switch">
                     {t('register_have_account')}{' '}
                     <a href="#" onClick={(e) => {

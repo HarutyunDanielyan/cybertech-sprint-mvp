@@ -6,14 +6,71 @@ const resources = {
     en: {
         translation: {
             // --- Homepage ---
+            "chat_header": "Moderat",
+            "chat_send_button": "send",
+            "chat_placeholder": "Enter your question",
+            "chat_greeting": "OUR CUSTOMERS HAVE SPOKEN\n" +
+                "\n" +
+                "Hi there!\n" +
+                "Learn why thousands of\n" +
+                "businesses chose Moderat as the\n" +
+                "fast, easy and trusted way to get\n" +
+                "compliant.\n" +
+                "\n" +
+                "Get in touch with our team\n" +
+                "\n" ,
             "main_title": "Your security is our priority",
             "main_subtitle": "A modern platform for analyzing and monitoring your website's cybersecurity.",
+            "dropdown_about": "About",
+            "dropdown_careers": "Careers",
+            "dropdown_security": "Security",
+            "dropdown_press": "Press",
+            "dropdown_gdpr": "GDPR",
+            "dropdown_nis2": "NIS2",
+            "dropdown_iso27001": "ISO27001",
+            "dropdown_find_a_partner": "Find a partner",
+            "dropdown_partners": "Partners",
+            "dropdown_all_resources": "All resources",
+            "dropdown_collections": "Collections",
+            "dropdown_customer_education": "Customer education",
+            "footer_copyright": "All rights reserved",
             // --- Navigation ---
+            "start_free": "Start Free Trial",
+            "view_dashboard": "View dashboard",
+            "quick_start": "Quick start",
             "nav_home": "Home",
             "nav_quiz": "Take Quiz",
             "nav_register": "Login/Register",
             "nav_profile": "My Profile",
             "nav_logout": "Logout",
+            "homepage_hero_title": "Moderat Compliance",
+            "homepage_hero_subtitle": "Automated compliance management for modern organizations across multiple regulatory frameworks",
+            "homepage_hero_button_trial": "Start Free Trial",
+            "homepage_hero_button_dashboard": "View Dashboard",
+            "homepage_getstarted_title": "Get Started with Automated Compliance",
+            "homepage_getstarted_subtitle": "Streamline your compliance process with our automated tools and frameworks",
+            "homepage_getstarted_button": "Quick Start",
+            "homepage_frameworks_title": "Supported Frameworks",
+            "homepage_frameworks_subtitle": "Comprehensive compliance coverage across multiple regulatory frameworks",
+            "homepage_frameworks_core": "Moderat Core",
+            "homepage_frameworks_gdpr_title": "GDPR",
+            "homepage_frameworks_gdpr_desc": "European data protection",
+            "homepage_frameworks_iso_title": "ISO 27001",
+            "homepage_frameworks_iso_desc": "Security management",
+            "homepage_frameworks_dp_title": "Data Protection",
+            "homepage_frameworks_dp_desc": "Armenian data law",
+            "homepage_frameworks_cyber_title": "Armenian Cyber Law",
+            "homepage_frameworks_cyber_desc": "Draft cybersecurity law",
+            "homepage_frameworks_nis2_title": "NIS 2",
+            "homepage_frameworks_nis2_desc": "Network security directive",
+            "homepage_trusted_title": "Trusted by Organizations",
+            "homepage_trusted_subtitle": "Join hundreds of organizations that trust us with their compliance needs",
+            "homepage_testimonial1_text": "\"The automated compliance tools saved us months of manual work. The framework coverage is comprehensive and the interface is intuitive.\"",
+            "homepage_testimonial1_author": "Sarah Johnson",
+            "homepage_testimonial1_role": "Compliance Officer, TechCorp",
+            "homepage_testimonial2_text": "\"Excellent support for multiple frameworks. The GDPR and ISO 27001 modules are particularly well-designed and easy to implement.\"",
+            "homepage_testimonial2_author": "Michael Chen",
+            "homepage_testimonial2_role": "CTO, DataSafe Solutions",
 
             // --- Register Page ---
             "register_title": "Create Account",
@@ -253,6 +310,30 @@ const resources = {
     hy: {
         translation: {
             // --- Главная страница ---
+            "chat_send_button": "Ուղարկել",
+            "chat_placeholder": "Մուտքագրեք ձեր հարցը",
+            "chat_greeting": "ՄԵՐ ՀԱՃԱԽՈՐԴՆԵՐԸ ԱՐԴԵՆ ԱՐԺԵՒՈՐԵԼ ԵՆ ՄԵԶ\n" +
+                "\n" +
+                "Ողջույն։\n" +
+                "\n" +
+                "Իմացի՛ր, թե ինչու են հազարավոր ընկերություններ վստահել Moderat-ին՝ որպես արագ, պարզ և վստահելի լուծում՝ համապատասխանության հասնելու համար։\n" +
+                "\n" +
+                "Կապ հաստատիր մեզ հետ:",
+            "chat_header": "Moderat",
+            "dropdown_about": "Մեր մասին",
+            "dropdown_careers": "Կարիերա",
+            "dropdown_security": "Անվտանգություն",
+            "dropdown_press": "Մամուլ",
+            "dropdown_gdpr": "GDPR",
+            "dropdown_nis2": "NIS2",
+            "dropdown_iso27001": "ISO27001",
+            "dropdown_compamy_size": "Ընկերության չափը",
+            "dropdown_find_a_partner": "Գտեք գործընկեր",
+            "dropdown_partners": "Գործընկերներ",
+            "dropdown_all_resources": "Բոլոր ռեսուրսները",
+            "dropdown_collections": "Հավաքածուներ",
+            "dropdown_customer_education": "Հաճախորդների ուսուցում",
+            "footer_copyright": " Բոլոր իրավունքները պաշտպանված են",
             "main_title": "Ձեր անվտանգությունը մեր առաջնահերթությունն է",
             "main_subtitle": "Ժամանակակից հարթակ՝ ձեր կայքի կիբերանվտանգության վերլուծության և մոնիթորինգի համար։",
             "start_audit_button": "Սկսել աուդիտը",
@@ -271,6 +352,37 @@ const resources = {
             "nav_where_to_start": "Ինչից սկսել", // Նոր էջ
             "compatibility_title": "Համատեղելիություն",
             "try_again_button": "Օգնեք ինձ 😂",
+            "homepage_hero_title": "Moderat Համապատասխանություն",
+            "homepage_hero_subtitle": "Ավտոմատացված համապատասխանության կառավարում ժամանակակից կազմակերպությունների համար՝ բազմաթիվ կարգավորող շրջանակներում։",
+            "homepage_hero_button_trial": "Սկսել անվճար փորձաշրջան",
+            "homepage_hero_button_dashboard": "Դիտել կառավարման վահանակը",
+            "homepage_getstarted_title": "Սկսեք ավտոմատացված համապատասխանությունից",
+            "homepage_getstarted_subtitle": "Պարզեցրեք ձեր համապատասխանության գործընթացը մեր ավտոմատացված գործիքների և շրջանակների միջոցով։",
+            "homepage_getstarted_button": "Արագ մեկնարկ",
+            "homepage_frameworks_title": "Աջակցվող շրջանակներ",
+            "homepage_frameworks_subtitle": "Համապարփակ համապատասխանության ծածկույթ բազմաթիվ կարգավորող շրջանակներում։",
+            "homepage_frameworks_core": "Moderat Core",
+            "homepage_frameworks_gdpr_title": "GDPR",
+            "homepage_frameworks_gdpr_desc": "Եվրոպական տվյալների պաշտպանություն",
+            "homepage_frameworks_iso_title": "ISO 27001",
+            "homepage_frameworks_iso_desc": "Անվտանգության կառավարում",
+            "homepage_frameworks_dp_title": "Տվյալների պաշտպանություն",
+            "homepage_frameworks_dp_desc": "Հայաստանի տվյալների օրենք",
+            "homepage_frameworks_cyber_title": "ՀՀ կիբերանվտանգության օրենք",
+            "homepage_frameworks_cyber_desc": "Կիբերանվտանգության օրենքի նախագիծ",
+            "homepage_frameworks_nis2_title": "NIS 2",
+            "homepage_frameworks_nis2_desc": "Ցանցային անվտանգության հրահանգ",
+            "homepage_trusted_title": "Կազմակերպությունների կողմից վստահված",
+            "homepage_trusted_subtitle": "Միացե՛ք հարյուրավոր կազմակերպությունների, որոնք վստահում են մեզ իրենց համապատասխանության կարիքները։",
+            "homepage_testimonial1_text": "«Ավտոմատացված համապատասխանության գործիքները մեզ խնայեցին ամիսների ձեռքի աշխատանք։ Շրջանակների ծածկույթը համապարփակ է, իսկ ինտերֆեյսը՝ ինտուիտիվ»։",
+            "homepage_testimonial1_author": "Սառա Ջոնսոն",
+            "homepage_testimonial1_role": "Համապատասխանության պատասխանատու, TechCorp",
+            "homepage_testimonial2_text": "«Գերազանց աջակցություն բազմաթիվ շրջանակների համար։ GDPR և ISO 27001 մոդուլները հատկապես լավ մշակված են և հեշտ են իրականացման համար»։",
+            "homepage_testimonial2_author": "Մայքլ Չեն",
+            "homepage_testimonial2_role": "ՏՏ տնօրեն, DataSafe Solutions",
+            "start_free": "Սկսեք անվճար փորձաշրջան",
+            "view_dashboard": "Դիտեք վահանակը",
+            "quick_start": "Արագ մեկնարկ",
             // --- Навигация ---
             "nav_home": "Գլխավոր",
             "nav_quiz": "Անցնել հարցումը",

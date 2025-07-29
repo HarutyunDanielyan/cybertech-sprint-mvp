@@ -9,30 +9,41 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer-container">
                 <div className="footer-column">
-                    <h4>{t('footer_product')}</h4>
+                    <h4>{t('nav_product')}</h4>
                     <ul>
-                        <li><a href="#features">{t('footer_features')}</a></li>
-                        <li><a href="#pricing">{t('footer_pricing')}</a></li>
-                        <li><a href="/demo">{t('footer_demo')}</a></li>
+                        <li><a href="#features">{t('dropdown_gdpr')}</a></li>
+                        <li><a href="#pricing">{t('dropdown_nis2')}</a></li>
+                        <li><a href="/demo">{t('dropdown_iso27001')}</a></li>
                     </ul>
                 </div>
                 <div className="footer-column">
-                    <h4>{t('footer_company')}</h4>
+                    <h4>{t('nav_solutions')}</h4>
                     <ul>
-                        <li><a href="/about">{t('footer_about')}</a></li>
-                        <li><a href="/contact">{t('footer_contact')}</a></li>
+                        <li><a href="#features">{t('dropdown_compamy_size')}</a></li>
+                        <li><a href="#pricing">{t('dropdown_find_a_partner')}</a></li>
+                        <li><a href="/demo">{t('dropdown_partners')}</a></li>
                     </ul>
                 </div>
                 <div className="footer-column">
-                    <h4>{t('footer_resources')}</h4>
+                    <h4>{t('nav_company')}</h4>
                     <ul>
-                        <li><a href="/blog">{t('footer_blog')}</a></li>
-                        <li><a href="/faq">{t('footer_faq')}</a></li>
+                        <li><a href="/about">{t('dropdown_about')}</a></li>
+                        <li><a href="/contact">{t('dropdown_careers')}</a></li>
+                        <li><a href="/contact">{t('dropdown_security')}</a></li>
+                        <li><a href="/contact">{t('dropdown_press')}</a></li>
+                    </ul>
+                </div>
+                <div className="footer-column">
+                    <h4>{t('nav_resources')}</h4>
+                    <ul>
+                        <li><a href="/blog">{t('dropdown_all_resources')}</a></li>
+                        <li><a href="/faq">{t('dropdown_collections')}</a></li>
+                        <li><a href="/faq">{t('dropdown_customer_education')}</a></li>
                     </ul>
                 </div>
             </div>
             <div className="footer-bottom">
-                <p>&copy; {new Date().getFullYear()} YourStartupName. {t('footer_copyright')}</p>
+                <p>&copy; {new Date().getFullYear()} Moderat. {t('footer_copyright')}</p>
             </div>
         </footer>
     );

@@ -57,20 +57,20 @@ const HomePage = () => {
                         <LogoIcon />
                         <span>Moderat</span>
                     </div>
-                    <h1>Moderat Compliance</h1>
-                    <p>Automated compliance management for modern organizations across multiple regulatory frameworks</p>
+                    <h1>{t('homepage_hero_title')}</h1>
+                    <p>{t('homepage_hero_subtitle')}</p>
                     <div className="hero-buttons">
-                        <button className="btn-primary" onClick={() => setCurrentPage('filters')}>Start Free Trial</button>
-                        <button className="btn-secondary" onClick={() => setCurrentPage('dashboard')}>View Dashboard</button>
+                        <button className="btn-primary" onClick={() => setCurrentPage('filters')}>{t('start_free')}</button>
+                        <button className="btn-secondary" onClick={() => setCurrentPage('dashboard')}>{t('view_dashboard')}</button>
                     </div>
                 </div>
             </section>
 
             {/* Секция 2: Get Started */}
             <section className="get-started-section">
-                <h2>Get Started with Automated Compliance</h2>
-                <p>Streamline your compliance process with our automated tools and frameworks</p>
-                <button className="btn-primary" onClick={() => setCurrentPage('filters')}>Quick Start</button>
+                <h2>{t('homepage_getstarted_title')}</h2>
+                <p>{t('homepage_getstarted_subtitle')}</p>
+                <button className="btn-primary" onClick={() => setCurrentPage('filters')}>{t('quick_start')}</button>
             </section>
 
             {/* НОВАЯ Секция: Supported Frameworks (Паутина) */}
@@ -81,12 +81,10 @@ const HomePage = () => {
                     animate="visible"
                     variants={fadeIn}
                 >
-                    <h1>Supported Frameworks</h1>
-                    <p>Comprehensive compliance coverage across multiple regulatory frameworks</p>
-                </motion.div>
-
+                    <h1>{t('homepage_frameworks_title')}</h1>
+                    <p>{t('homepage_frameworks_subtitle')}</p></motion.div>
                 <div className="spiderweb-container">
-                    <SpiderwebBackground />
+                    <SpiderwebBackground/>
                     <div className="node center-node">Moderat Core</div>
                     <div className="node node-gdpr"><strong>GDPR</strong><span>European data protection</span></div>
                     <div className="node node-iso"><strong>ISO 27001</strong><span>Security management</span></div>
@@ -98,8 +96,8 @@ const HomePage = () => {
 
             {/* Секция 4: Trusted by */}
             <section className="trusted-by-section">
-                <h2>Trusted by Organizations</h2>
-                <p>Join hundreds of organizations that trust us with their compliance needs</p>
+                <h2>{t('homepage_trusted_title')}</h2>
+                <p>{t('homepage_trusted_subtitle')}</p>
                 <div className="logos-grid">
                     <div className="logo-item">TechCorp</div>
                     <div className="logo-item">DataSafe</div>
@@ -109,18 +107,18 @@ const HomePage = () => {
                 <div className="testimonials-grid">
                     <div className="testimonial-card">
                         <div className="stars">★★★★★</div>
-                        <p>"The automated compliance tools saved us months of manual work. The framework coverage is comprehensive and the interface is intuitive."</p>
+                        <p>{t('homepage_testimonial1_text')}</p>
                         <div className="author">
-                            <strong>Sarah Johnson</strong>
-                            <span>Compliance Officer, TechCorp</span>
+                            <strong>{t('homepage_testimonial1_author')}</strong>
+                            <span>{t('homepage_testimonial1_role')}</span>
                         </div>
                     </div>
                     <div className="testimonial-card">
                         <div className="stars">★★★★★</div>
-                        <p>"Excellent support for multiple frameworks. The GDPR and ISO 27001 modules are particularly well-designed and easy to implement."</p>
+                        <p>{t('homepage_testimonial2_text')}</p>
                         <div className="author">
-                            <strong>Michael Chen</strong>
-                            <span>CTO, DataSafe Solutions</span>
+                            <strong>{t('homepage_testimonial2_author')}</strong>
+                            <span>{t('homepage_testimonial2_role')}</span>
                         </div>
                     </div>
                 </div>

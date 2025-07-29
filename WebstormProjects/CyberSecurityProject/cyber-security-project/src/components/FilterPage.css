@@ -41,7 +41,7 @@
 }
 
 .option-button.selected {
-    background-color: #764ba2;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border-color: #764ba2;
     font-weight: 600;
@@ -54,7 +54,7 @@
     font-size: 1.2rem;
     font-weight: bold;
     color: white;
-    background-color: #28a745;
+    background: linear-gradient(135deg, #b5ea66 0%, #199f02 100%);
     border: none;
     border-radius: 8px;
     cursor: pointer;
