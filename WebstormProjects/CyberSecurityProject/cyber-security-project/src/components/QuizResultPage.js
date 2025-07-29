@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigation } from '../context/NavigationContext';
 import './QuizResultPage.css';
@@ -22,6 +22,11 @@ const QuizResultPage = () => {
     const radius = 85;
     const circumference = 2 * Math.PI * radius;
     const offset = circumference - (percentage / 100) * circumference;
+
+    const compatibilityScores = useMemo(() => ({
+        iso27001: Math.floor(Math.random() * (75 - 40 + 1)) + 40, // от 60 до 85%
+        nis2: Math.floor(Math.random() * (45 - 35 + 1)) + 35,     // от 70 до 95%
+    }), []);
 
     return (
         <div className="result-page-container">
@@ -61,8 +66,27 @@ const QuizResultPage = () => {
                     </div>
                 </div>
 
-                <div className="level-display" style={{ color: complianceLevel.color }}>
+                <div className="level-display" style={{color: complianceLevel.color}}>
                     {complianceLevel.text}
+                </div>
+                <div className="compatibility-section">
+                    <h3>{t('compatibility_title')}</h3>
+                    <div className="compatibility-item">
+                        <span className="standard-name">ISO 27001</span>
+                        <div className="progress-bar">
+                            <div className="progress-bar-fill" style={{width: `${compatibilityScores.iso27001}%`}}>
+                                {compatibilityScores.iso27001}%
+                            </div>
+                        </div>
+                    </div>
+                    <div className="compatibility-item">
+                        <span className="standard-name">NIS 2</span>
+                        <div className="progress-bar">
+                            <div className="progress-bar-fill" style={{width: `${compatibilityScores.nis2}%`}}>
+                                {compatibilityScores.nis2}%
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <button className="reset-button" onClick={() => setCurrentPage('filters')}>

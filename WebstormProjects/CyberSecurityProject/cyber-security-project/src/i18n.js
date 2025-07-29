@@ -46,6 +46,7 @@ const resources = {
             "filter_step_6_title": "Select frameworks (optional)",
             "framework_cobit": "COBIT", "framework_cis": "CIS Controls", "framework_owasp": "OWASP ASVS",
             "filter_submit_button": "Ready",
+            "try_again_button": "Help me 😂",
             // --- Test Type Selection ---
             "test_type_selection_title": "Select implementation plan option",
             "test_type_our_suggestion": "Suggested Option (based on 4 criteria)",
@@ -91,6 +92,7 @@ const resources = {
             "nav_login": "Login",
             "nav_register_button": "Register",
             "nav_where_to_start": "Where to start",
+            "compatibility_title": "Compliance",
             "quiz_by_category": {
                 "gdpr": [
                     // --- Полный тест GDPR на английском ---
@@ -267,7 +269,8 @@ const resources = {
             "nav_company": "Ընկերություն",
             "nav_register_button": "Գրանցում", // Կոճակ
             "nav_where_to_start": "Ինչից սկսել", // Նոր էջ
-
+            "compatibility_title": "Համատեղելիություն",
+            "try_again_button": "Օգնեք ինձ 😂",
             // --- Навигация ---
             "nav_home": "Գլխավոր",
             "nav_quiz": "Անցնել հարցումը",

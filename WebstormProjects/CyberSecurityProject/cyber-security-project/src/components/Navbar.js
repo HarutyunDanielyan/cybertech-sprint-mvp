@@ -6,7 +6,7 @@ import './Navbar.css';
 
 const Navbar = () => {
     const { t } = useTranslation();
-    const { setCurrentPage, isAuthenticated, logout } = useNavigation();
+    const { setCurrentPage, isAuthenticated, logout , user} = useNavigation();
 
     // Состояние для отслеживания видимости выпадающего меню
     const [isProductMenuOpen, setProductMenuOpen] = useState(false);
@@ -86,11 +86,13 @@ const Navbar = () => {
             </ul>
 
             <div className="navbar-actions">
+                { }
                 <LanguageSwitcher />
-                {isAuthenticated ? (
+                {isAuthenticated && user ? (
                     <>
-                        <span className="user-email">demo@moderat.com</span>
-                        <button className="navbar-cta logout-btn" onClick={logout}>
+                        {/* Отображаем email пользователя */}
+                        <span className="user-email">{user.email}</span>
+                        <button className="navbar-cta logout-btn" onClick={logout}>x
                             {t('nav_logout')}
                         </button>
                     </>

@@ -20,11 +20,11 @@
     position: relative;
     width: 200px;
     height: 200px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .circular-chart {
-    transform: rotate(-90deg); /* Начинаем круг с верхней точки */
+    transform: rotate(-90deg);
 }
 
 .circular-chart-progress {
@@ -46,15 +46,61 @@
     line-height: 1;
 }
 
-.max-score-text {
-    font-size: 1rem;
-    color: #6c757d;
-}
-
 .level-display {
     font-size: 1.5rem;
     font-weight: 600;
+    margin-bottom: 2.5rem;
+}
+
+/* Стили для раздела совместимости */
+.compatibility-section {
+    width: 100%;
     margin-bottom: 2rem;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 2rem;
+}
+
+.compatibility-section h3 {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.compatibility-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.standard-name {
+    width: 100px;
+    font-weight: 500;
+    color: #555;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 25px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #4a90e2;
+    color: white;
+    font-weight: 600;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 1s ease-in-out;
 }
 
 .reset-button {

@@ -1,53 +1,91 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigation } from '../context/NavigationContext';
+import axios from 'axios';
 import './Auth.css';
 
 const RegisterPage = () => {
     const { t } = useTranslation();
-    // Получаем функцию login из контекста
-    const { setCurrentPage, login } = useNavigation();
+    const { login, setCurrentPage } = useNavigation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [userType, setUserType] = useState('client');
+    const [username, setUsername] = useState(''); // Добавили поле для имени пользователя
+    const [userType, setUserType] = useState('user');
+    const [error, setError] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        // Здесь должна быть реальная логика регистрации
-        // После успешной регистрации вызываем login()
-        login();
+        setError('');
+        try {
+            const response = await axios.post('http://localhost:8000/api/users/register/', {
+                username,
+                email,
+                password,
+                role: userType,
+            });
+            // После успешной регистрации вызываем login() с данными пользователя
+            login(response.data.user);
+        } catch (err) {
+            // Улучшенная обработка ошибок
+            if (err.response) {
+                // Ошибка пришла от сервера (например, "пользователь уже существует")
+                setError(err.response.data.message || 'Ошибка регистрации. Проверьте введенные данные.');
+                console.error("Ошибка от сервера:", err.response.data);
+            } else if (err.request) {
+                // Запрос был сделан, но ответа не было (CORS, сервер выключен)
+                setError('Failed to connect to server. Check CORS or make sure backend is running.');
+                console.error("Нет ответа от сервера:", err.request);
+            } else {
+                // Произошла другая ошибка
+                setError('Произошла непредвиденная ошибка.');
+                console.error('Ошибка:', err.message);
+            }
+        }
     };
 
     return (
         <div className="auth-container">
             <form className="auth-form" onSubmit={handleSubmit}>
                 <h2>{t('register_title')}</h2>
-                {/* ...поля ввода... */}
+                {error && <p className="error-message">{error}</p>}
+                <div className="form-group">
+
+
+                </div>
                 <div className="form-group">
                     <label htmlFor="email">{t('register_email_label')}</label>
-                    <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                    <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">{t('register_password_label')}</label>
-                    <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                    <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}
+                           required/>
                 </div>
                 <div className="form-group">
                     <label>{t('register_who_are_you')}</label>
                     <div className="role-selector">
                         <label>
-                            <input type="radio" name="userType" value="client" checked={userType === 'client'} onChange={(e) => setUserType(e.target.value)} />
+                            <input type="radio" name="userType" value="user" checked={userType === 'user'}
+                                   onChange={(e) => setUserType(e.target.value)}/>
                             {t('register_role_client')}
                         </label>
                         <label>
-                            <input type="radio" name="userType" value="auditor" checked={userType === 'auditor'} onChange={(e) => setUserType(e.target.value)} />
+                            <input type="radio" name="userType" value="auditor" checked={userType === 'auditor'}
+                                   onChange={(e) => setUserType(e.target.value)}/>
                             {t('register_role_auditor')}
                         </label>
                     </div>
                 </div>
                 <button type="submit" className="auth-button">{t('register_button')}</button>
+                {/* ... (ссылка на страницу входа) ... */}
                 <p className="auth-switch">
                     {t('register_have_account')}{' '}
-                    <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('login'); }}>{t('register_login_link')}</a>
+                    <a href="#" onClick={(e) => {
+                        e.preventDefault();
+                        setCurrentPage('login');
+                    }}>
+                        {t('register_login_link')}
+                    </a>
                 </p>
             </form>
         </div>

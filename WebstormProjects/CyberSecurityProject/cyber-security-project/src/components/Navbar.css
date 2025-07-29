@@ -103,7 +103,7 @@
 /* Стили для основной кнопки (CTA) */
 .navbar-cta {
     padding: 0.7rem 1.5rem;
-    background-color: #764ba2;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
     border-radius: 5px;
@@ -113,7 +113,7 @@
 }
 
 .navbar-cta:hover {
-    background-color: #0056b3;
+    background-color: #764ba2;
 }
 
 /* Стили для email пользователя */
