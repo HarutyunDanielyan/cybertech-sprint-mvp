@@ -126,7 +126,7 @@ LOCALE_PATHS = [BASE_DIR / 'locale']
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    BASE_DIR / "frontend" / "build" / "static",  # Ավելացված React-ի ստատիկ ֆայլերի համար
+    BASE_DIR / "frontend" / "CyberSecurityProject" / "cyber-security-project" / "build" / "static",  # Թարմացված ուղի
 ]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
@@ -189,7 +189,7 @@ REST_FRAMEWORK = {
 
 # CORS settings for React integration
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React-ի մշակման սերվեր
+    "http://localhost:3000",
 ]
 CORS_ALLOW_CREDENTIALS = True  # Թույլատրել cookies և նույնականացման վերնագրեր
 

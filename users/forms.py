@@ -6,6 +6,7 @@ from .models import User
 class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField(required=True)
     role = forms.ChoiceField(choices=User.ROLES, required=True)
+    username = forms.CharField(required=True)
 
     def clean_email(self):
         email = self.cleaned_data['email']
@@ -19,7 +20,7 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email', 'password1', 'password2', 'role']
+        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2', 'role']
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:

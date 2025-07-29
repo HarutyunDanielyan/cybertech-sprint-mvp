@@ -5,9 +5,75 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61d89c86-27d2-4926-86e4-e624a8150fdf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/standards/api_urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/api_urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cybertech-sprint-mvp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cybertech-sprint-mvp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/.idea/CyberSecurityProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/assets/tree.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/AnimatedPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/AnimatedPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/Auth.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/CategorySelectionPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/CategorySelectionPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/ClientDashboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/ClientDashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/Features.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/Features.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/FilterPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/FilterPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/Footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/Footer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/FrameworkTree.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/FrameworkTree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/HeroSection.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/HeroSection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/HomePage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/HomePage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/LanguageSwitcher.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/LoginPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/Navbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/Navbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/ProfessionSelectionPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/Quiz.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/Quiz.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/QuizResultPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/QuizResultPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/RegisterPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/SocialProof.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/SocialProof.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/SupportChat.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/SupportChat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/TestTypeSelectionPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/TestTypeSelectionPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/WhereToStartPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/components/WhereToStartPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/context/NavigationContext.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/i18n.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/CyberSecurityProject/cyber-security-project/src/setupTests.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cybertech_sprint_mvp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybertech_sprint_mvp/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cybertech_sprint_mvp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybertech_sprint_mvp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +83,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -37,6 +103,13 @@
     &quot;accountId&quot;: &quot;ad0b3225-b488-4d16-b416-c8e297e58526&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/users/views.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/anaconda3/Lib/importlib/__init__.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -48,28 +121,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "feature/client-dashboard-final",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Acer\PycharmProjects\cybertech-sprint-mvp\frontend\CyberSecurityProject\cyber-security-project" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PY-242.21829.153" />
-        <option value="bundled-python-sdk-464836ebc622-b74155a9e76b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.21829.153" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.26775.22" />
+        <option value="bundled-python-sdk-9f73701ac511-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.26775.22" />
       </set>
     </attachedChunks>
   </component>
@@ -87,11 +166,30 @@
       <workItem from="1753479375873" duration="569000" />
       <workItem from="1753479962376" duration="1390000" />
       <workItem from="1753530478786" duration="1384000" />
+      <workItem from="1753704549374" duration="966000" />
+      <workItem from="1753709699635" duration="7683000" />
+      <workItem from="1753734244216" duration="1439000" />
+      <workItem from="1753735871800" duration="1345000" />
+      <workItem from="1753737449242" duration="345000" />
+      <workItem from="1753737814377" duration="100000" />
+      <workItem from="1753737945129" duration="1229000" />
+      <workItem from="1753789173031" duration="18388000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
